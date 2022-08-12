@@ -7,10 +7,12 @@
 
 - Ctrl+P > settings.json (User)
 
-```json
-    // Quality of life
+```js
+    // Debloat
     "telemetry.telemetryLevel": "off",
     "extensions.ignoreRecommendations": true,
+
+    // Quality of life
     "search.followSymlinks": false,
     "editor.rulers": [
         { "column": 72, "color": "#383838" },
@@ -25,7 +27,7 @@
     "files.trimTrailingWhitespace": true,
     "editor.detectIndentation": false,
     "editor.hover.delay": 1500,
-    "editor.acceptSuggestionOnEnter": "off", // TAB to accepts suggestions
+    "editor.acceptSuggestionOnEnter": "off", // TAB accepts suggestion
     "editor.find.addExtraSpaceOnTop": false,
     "workbench.editor.openPositioning": "last",
 
@@ -66,20 +68,23 @@
     "vim.insertModeKeyBindings": [
         {
             // Fast kj means ESC
+            // VIMRC: inoremap kj <esc>
             "before": ["k", "j"],
-            "after": ["<Esc>"]
+            "after": ["<esc>"]
         },
         {
             // Fast KJ means ESC
+            // VIMRC: inoremap KJ <esc>
             "before": ["K", "J"],
-            "after": ["<Esc>"]
+            "after": ["<esc>"]
         },
         {
             // Ctrl-J converts word to uppercase
             // Type the word and Ctrl+J while in insert mode
             // Example: i#define very_long_macro_name<Ctrl+j> 1
-            "before": ["<C-j>"],
-            "after": ["<Esc>", "g", "U", "i", "w", "e", "a"]
+            // VIMRC: inoremap <c-j> <esc>gUiwea
+            "before": ["<c-j>"],
+            "after": ["<esc>", "g", "U", "i", "w", "e", "a"]
         },
     ],
     "vim.handleKeys": {
