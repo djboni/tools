@@ -8,6 +8,7 @@
 - Ctrl+P > settings.json (User)
 
 ```js
+{
     // Debloat
     "telemetry.telemetryLevel": "off",
     "extensions.ignoreRecommendations": true,
@@ -99,4 +100,5 @@
 
     // Other
     // ...
+}
 ```
