@@ -49,6 +49,8 @@
 
     // Git, GitLens
     "diffEditor.wordWrap": "on",
+	"diffEditor.ignoreTrimWhitespace": false,
+    "git.enableSmartCommit": false,
     "git.confirmSync": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.currentLine.enabled": false,
@@ -66,7 +68,7 @@
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.useCtrlKeys": true,
-    "vim.insertModeKeyBindings": [
+    "vim.insertModeKeyBindingsNonRecursive": [
         {
             // Fast kj means ESC
             // VIMRC: inoremap kj <esc>
@@ -86,6 +88,43 @@
             // VIMRC: inoremap <c-j> <esc>gUiwea
             "before": ["<c-j>"],
             "after": ["<esc>", "g", "U", "i", "w", "e", "a"]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            // Add parenthesis around selected text
+            // Example: vee(
+            // VIMRC: TODO
+            "before": ["("],
+            "after": ["d", "i", "(", ")", "<esc>", "P"]
+        },
+        {
+            // Add brackets around selected text
+            // Example: vee[
+            // VIMRC: TODO
+            "before": ["["],
+            "after": ["d", "i", "[", "]", "<esc>", "P"]
+        },
+        {
+            // Add braces around selected text
+            // Example: vee{
+            // VIMRC: TODO
+            "before": ["{"],
+            "after": ["d", "i", "{", "}", "<esc>", "P"]
+        },
+        {
+            // Add single quotes around selected text
+            // Example: vee"
+            // VIMRC: TODO
+            "before": ["'"],
+            "after": ["d", "i", "'", "'", "<esc>", "P"]
+        },
+        {
+            // Add double quotes around selected text
+            // Example: vee"
+            // VIMRC: TODO
+            "before": ["\""],
+            "after": ["d", "i", "\"", "\"", "<esc>", "P"]
         },
     ],
     "vim.handleKeys": {
