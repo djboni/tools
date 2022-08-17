@@ -94,37 +94,44 @@
         {
             // Add parenthesis around selected text
             // Example: vee(
-            // VIMRC: TODO
+            // VIMRC: vnoremap ( di()<esc>P
             "before": ["("],
             "after": ["d", "i", "(", ")", "<esc>", "P"]
         },
         {
             // Add brackets around selected text
             // Example: vee[
-            // VIMRC: TODO
+            // VIMRC: vnoremap [ di[]<esc>P
             "before": ["["],
             "after": ["d", "i", "[", "]", "<esc>", "P"]
         },
         {
             // Add braces around selected text
             // Example: vee{
-            // VIMRC: TODO
+            // VIMRC: vnoremap { di{}<esc>P
             "before": ["{"],
             "after": ["d", "i", "{", "}", "<esc>", "P"]
         },
         {
             // Add single quotes around selected text
             // Example: vee"
-            // VIMRC: TODO
+            // VIMRC: vnoremap ' di''<esc>P
             "before": ["'"],
             "after": ["d", "i", "'", "'", "<esc>", "P"]
         },
         {
             // Add double quotes around selected text
             // Example: vee"
-            // VIMRC: TODO
+            // VIMRC: vnoremap " di""<esc>P
             "before": ["\""],
             "after": ["d", "i", "\"", "\"", "<esc>", "P"]
+        },
+        {
+            // Add back ticks around selected text
+            // Example: vee`
+            // VIMRC: vnoremap ` di``<esc>P
+            "before": ["`"],
+            "after": ["d", "i", "`", "`", "<esc>", "P"]
         },
     ],
     "vim.handleKeys": {
