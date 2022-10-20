@@ -43,6 +43,7 @@
   "diffEditor.maxComputationTime": 0,
   "git.enableSmartCommit": false,
   "git.confirmSync": false,
+  "git.autoRepositoryDetection": "openEditors",
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
