@@ -1,14 +1,7 @@
-repos:
-  - repo: local
-    hooks:
-      - id: ansible-playbook-check
-        name: ansible playbook check
-        entry: ansible-playbook --syntax-check
-        language: system
-        types: [yaml]
-        files: "\\.ya?ml$"
-        exclude: "(inventory|\\.pre-commit-config)\\.ya?ml$"
+---
+# Dependencies: pip install ansible yamllint
 
+repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
     hooks:
@@ -18,3 +11,27 @@ repos:
         args: [--fix=lf]
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: yaml-lint
+        name: yaml lint
+        entry: >
+          yamllint --strict
+          --config-data '{
+            extends: default,
+            rules: {
+              comments: {min-spaces-from-content: 1}
+            }
+          }'
+        language: system
+        types: [yaml]
+        files: "\\.ya?ml$"
+
+      - id: ansible-playbook-check
+        name: ansible playbook check
+        entry: ansible-playbook --syntax-check
+        language: system
+        types: [yaml]
+        files: "\\.ya?ml$"
+        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$"
