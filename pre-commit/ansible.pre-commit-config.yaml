@@ -1,5 +1,4 @@
----
-# Dependencies: pip install ansible yamllint
+# Dependencies: pip install yamllint ansible ansible-lint
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -14,8 +13,8 @@ repos:
 
   - repo: local
     hooks:
-      - id: yaml-lint
-        name: yaml lint
+      - id: yaml-lint-check
+        name: yaml lint check
         entry: >
           yamllint --strict
           --config-data '{
@@ -31,6 +30,14 @@ repos:
       - id: ansible-playbook-check
         name: ansible playbook check
         entry: ansible-playbook --syntax-check
+        language: system
+        types: [yaml]
+        files: "\\.ya?ml$"
+        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$"
+
+      - id: ansible-lint-check
+        name: ansible lint check
+        entry: ansible-lint
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
