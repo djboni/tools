@@ -1,3 +1,4 @@
+---
 # Dependencies: pip install yamllint ansible ansible-lint
 
 repos:
@@ -26,6 +27,7 @@ repos:
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
+        fail_fast: true
 
       - id: ansible-playbook-check
         name: ansible playbook check
@@ -33,7 +35,9 @@ repos:
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
-        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$"
+        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$|\
+          ^vars/"
+        fail_fast: true
 
       - id: ansible-lint-check
         name: ansible lint check
@@ -41,4 +45,6 @@ repos:
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
-        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$"
+        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$|\
+          ^vars/"
+        fail_fast: true
