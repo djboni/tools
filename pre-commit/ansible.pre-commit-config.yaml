@@ -38,7 +38,7 @@ repos:
         exclude: "\
           ^\\.pre-commit-config\\.ya?ml$|\
           ^(test|dev|prod)-env\\.ya?ml$|\
-          (^|.*/)vars/\
+          (^|.*/)(vars|tasks|handlers)/\
           "
         fail_fast: true
 
@@ -51,6 +51,6 @@ repos:
         exclude: "\
           ^\\.pre-commit-config\\.ya?ml$|\
           ^(test|dev|prod)-env\\.ya?ml$|\
-          (^|.*/)vars/\
+          (^|.*/)(vars|tasks|handlers)/\
           "
         fail_fast: true
