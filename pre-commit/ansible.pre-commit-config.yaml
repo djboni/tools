@@ -35,8 +35,11 @@ repos:
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
-        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$|\
-          ^vars/"
+        exclude: "\
+          ^\\.pre-commit-config\\.ya?ml$|\
+          ^(test|dev|prod)-env\\.ya?ml$|\
+          (^|.*/)vars/\
+          "
         fail_fast: true
 
       - id: ansible-lint-check
@@ -45,6 +48,9 @@ repos:
         language: system
         types: [yaml]
         files: "\\.ya?ml$"
-        exclude: "^(test-env|dev-env|prod-env|\\.pre-commit-config)\\.ya?ml$|\
-          ^vars/"
+        exclude: "\
+          ^\\.pre-commit-config\\.ya?ml$|\
+          ^(test|dev|prod)-env\\.ya?ml$|\
+          (^|.*/)vars/\
+          "
         fail_fast: true
