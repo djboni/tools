@@ -1,0 +1,21 @@
+default:
+  image: ubuntu:latest
+
+stages:
+  - check
+
+check-precommit:
+  stage: check
+  image: python:latest
+  before_script:
+    - pip3 install pre-commit
+  script:
+    - git reset --soft HEAD~1
+    - pre-commit run
+  after_script:
+    - git diff --color=always
+    - |
+      echo "If this pre-commit check failed, make sure that pre-commit is
+      installed and enabled in your working repository:
+      \$ pip3 install pre-commit
+      \$ pre-commit install"
